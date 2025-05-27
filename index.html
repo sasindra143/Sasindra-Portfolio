@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sasindra-Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="icon" href="https://res.cloudinary.com/dvknx0hpm/image/upload/v1737747332/22_r1tdlj.jpg" type="image/x-icon">
+    <style>
+        :root {
+            --primary-color: #fbbf24;
+            --secondary-color: #f59e0b;
+            --dark-bg: #1a1a1a;
+            --light-bg: #ffffff;
+            --dark-text: #1e293b;
+            --light-text: #f8fafc;
+            --transition: all 0.3s ease;
+            --nav-height: 80px; /* Increased navigation height */
+        }
+
+        [data-theme="dark"] {
+            --bg-color: var(--dark-bg);
+            --text-color: var(--light-text);
+        }
+
+        [data-theme="light"] {
+            --bg-color: var(--light-bg);
+            --text-color: var(--dark-text);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: var(--transition);
+            font-size: 18px; /* Increased base font size */
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: var(--nav-height);
+            padding: 0 5%;
+            background-color: var(--bg-color);
+            box-shadow: 0 2px 10px rgba(251, 191, 36, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px; /* Increased max-width */
+            margin: 0 auto;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 2.2rem; /* Increased logo size */
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            text-shadow: 2px 2px 4px rgba(251, 191, 36, 0.2);
+            padding: 10px 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem; /* Increased gap between links */
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.25rem; /* Increased link font size */
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+            letter-spacing: 0;
+            padding: 10px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px; /* Increased underline thickness */
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            letter-spacing: 1.5px; /* Increased letter spacing on hover */
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 2rem; /* Increased icon size */
+            color: var(--primary-color);
+            transition: var(--transition);
+            padding: 10px;
+        }
+
+        .theme-toggle i {
+            transform-origin: center;
+            transition: transform 0.5s ease;
+        }
+
+        .theme-toggle:hover i {
+            transform: rotate(180deg);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 2rem; /* Increased hamburger menu size */
+            color: var(--primary-color);
+            transition: var(--transition);
+            padding: 10px;
+        }
+
+        @media (max-width: 968px) { /* Increased breakpoint for better tablet support */
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: var(--nav-height);
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-color);
+                padding: 1.5rem; /* Increased padding */
+                flex-direction: column;
+                text-align: center;
+                transform: translateY(-10px);
+                opacity: 0;
+                transition: all 0.3s ease;
+                gap: 1.5rem; /* Increased gap in mobile menu */
+            }
+
+            .nav-links.active {
+                display: flex;
+                transform: translateY(0);
+                opacity: 1;
+                box-shadow: 0 4px 6px rgba(251, 191, 36, 0.1);
+            }
+
+            .nav-links a {
+                font-size: 1.5rem; /* Increased mobile menu font size */
+                padding: 15px 0; /* Increased padding for better touch targets */
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .mobile-menu.active i {
+                transform: rotate(90deg);
+            }
+        }
+
+        /* Added padding to body to prevent content from hiding under navbar */
+        body {
+            padding-top: var(--nav-height);
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">Sasindra</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="theme-toggle" aria-label="Toggle theme">
+                <i class='bx bx-sun'></i>
+            </button>
+            <button class="mobile-menu" aria-label="Toggle menu">
+                <i class='bx bx-menu'></i>
+            </button>
+        </div>
+    </nav>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            themeIcon.className = newTheme === 'light' ? 'bx bx-sun' : 'bx bx-moon';
+        });
+
+        // Mobile Menu Toggle with auto-close
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        const allNavLinks = document.querySelectorAll('.nav-links a');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        allNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+  
+    <!-- Home Section with Particle Background -->
+<section class="home-section" id="home">
+    <div id="particles-js"></div>
+    <div class="home-content">
+        <div class="profile-container">
+            <img src="https://res.cloudinary.com/dvknx0hpm/image/upload/v1737747332/22_r1tdlj.jpg" alt="Profile Picture" class="profile-image">
+        </div>
+        <div class="text-content">
+            <h3 class="welcome-text">🔥 Welcome to My Portfolio</h3>
+            <h1 class="main-heading">👋 Hello! I'm <span class="typing"></span></h1>
+            <h2 class="sub-heading">A Passionate Full Stack Web Developer</h2>
+            <p class="description">Specializing in building exceptional digital experiences. Proficient in both frontend and backend development, with a strong foundation in modern web technologies and best practices.</p>
+            <div class="cta-buttons">
+                <a href="your-resume.pdf" class="btn pulse">Download Resume</a>
+                <a href="#contact" class="btn gradient">Hire Me</a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/sasindra143?tab=repositories" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sasindra-madduri/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/vertex_solutions_1922?utm_source=qr&igsh=aDY2bjU2NWNrc2hk" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="http://Wa.me/+919959732476" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+ 
+</section>
+
+<style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Home Section Styles */
+.home-section {
+    position: relative;
+    min-height: 100vh;
+    background: #0a192f;
+    display: flex;
+    align-items: center;
+    padding: 100px 50px;
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.home-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Profile Image Styles */
+.profile-container {
+    flex-shrink: 0;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 8px solid #ffd700;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Text Content Styles */
+.text-content {
+    color: #ffffff;
+}
+
+.welcome-text {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.main-heading {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.sub-heading {
+    font-size: 2rem;
+    color: #8892b0;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #8892b0;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* Button Styles */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.pulse {
+    background: #ffd700;
+    color: #0a192f;
+    animation: pulse 2s infinite;
+}
+
+.gradient {
+    background: linear-gradient(45deg, #ffd700, #ff8c00);
+    color: #ffffff;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Links Styles */
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #1f2937;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffd700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #ffd700;
+    color: #0a192f;
+    transform: translateY(-5px);
+}
+
+/* Wave Animation */
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .profile-image {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 30px;
+    }
+
+    .main-heading {
+        font-size: 2.5rem;
+    }
+
+    .sub-heading {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 1.1rem;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-section {
+        padding: 80px 20px;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .main-heading {
+        font-size: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+</style>
+
+<script>
+// Typing Animation
+document.addEventListener('DOMContentLoaded', function() {
+    const options = {
+        strings: ['Sasindra', 'Fullstack Developer', 'Web Developer', 'UI Designer'],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    };
+    
+    new Typed('.typing', options);
+});
+
+// Particle.js Configuration
+particlesJS('particles-js', {
+    particles: {
+        number: {
+            value: 80,
+            density: {
+                enable: true,
+                value_area: 800
+            }
+        },
+        color: {
+            value: '#ffd700'
+        },
+        shape: {
+            type: 'circle'
+        },
+        opacity: {
+            value: 0.5,
+            random: false
+        },
+        size: {
+            value: 3,
+            random: true
+        },
+        line_linked: {
+            enable: true,
+            distance: 150,
+            color: '#ffd700',
+            opacity: 0.4,
+            width: 1
+        },
+        move: {
+            enable: true,
+            speed: 6,
+            direction: 'none',
+            random: false,
+            straight: false,
+            out_mode: 'out',
+            bounce: false
+        }
+    },
+    interactivity: {
+        detect_on: 'canvas',
+        events: {
+            onhover: {
+                enable: true,
+                mode: 'repulse'
+            },
+            onclick: {
+                enable: true,
+                mode: 'push'
+            },
+            resize: true
+        }
+    },
+    retina_detect: true
+});
+</script>
+    
+
+
+
+
+
+
+
+
+
+<!-- About Section -->
+<section id="about" class="about-section">
+    <div id="particles-about"></div>
+    
+    <div class="about-content">
+        <div class="about-card">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="blob-animation"></div>
+                    <img src="https://res.cloudinary.com/dvknx0hpm/image/upload/v1737268243/sasi-removebg-preview_mfty9o.png" alt="Profile Picture" class="profile-pic">
+                </div>
+                <div class="about-text">
+                    <p class="about-description">I am a passionate Full Stack Developer with expertise in modern web technologies. My journey in web development has equipped me with a strong foundation in both front-end and back-end development.</p>
+                    
+                    <div class="key-points">
+                        <div class="point">
+                            <i class="fas fa-code"></i>
+                            <h3>Web Development</h3>
+                            <p>Creating responsive and dynamic web applications</p>
+                        </div>
+                        <div class="point">
+                            <i class="fas fa-database"></i>
+                            <h3>Backend Development</h3>
+                            <p>Building robust server-side applications</p>
+                        </div>
+                        <div class="point">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>Responsive Design</h3>
+                            <p>Crafting mobile-first user experiences</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</section>
+
+<style>
+/* About Section Styles */
+.about-section {
+    position: relative;
+    min-height: 100vh;
+    background: #0a192f;
+    color: #ffffff;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+#particles-about {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-card {
+    background: rgba(17, 34, 64, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #ffd700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.blob-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(45deg, #ffd700, #ff6b6b);
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    animation: blobAnimation 8s ease-in-out infinite;
+    z-index: 1;
+}
+
+.profile-pic {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+    border: 4px solid #ffd700;
+}
+
+.about-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #e6f1ff;
+}
+
+.key-points {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.point {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.point:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.point i {
+    font-size: 2rem;
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.point h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.point p {
+    font-size: 0.9rem;
+    color: #e6f1ff;
+}
+
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave-container svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 150px;
+}
+
+.wave-container svg path {
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform-origin: center bottom;
+}
+
+.wave-container svg path:nth-of-type(2) {
+    animation-delay: -2s;
+    animation-duration: 11s;
+}
+
+.wave-container svg path:nth-of-type(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+@keyframes wave {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    50% {
+        transform: translate3d(85px, 0, 0);
+    }
+    100% {
+        transform: translate3d(-90px, 0, 0);
+    }
+}
+
+@keyframes blobAnimation {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .key-points {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-card {
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .about-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .profile-pic {
+        width: 230px;
+        height: 230px;
+    }
+
+    .blob-animation {
+        width: 270px;
+        height: 270px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .key-points {
+        grid-template-columns: 1fr;
+    }
+
+    .about-description {
+        font-size: 1rem;
+    }
+}
+</style>
+
+<!-- Initialize particles.js for About section -->
+<script>
+// Add this after your existing particles.js initialization
+document.addEventListener('DOMContentLoaded', function() {
+    particlesJS('particles-about', {
+        particles: {
+            number: { value: 50, density: { enable: true, value_area: 800 } },
+            color: { value: '#ffd700' },
+            shape: { type: 'circle' },
+            opacity: {
+                value: 0.5,
+                random: false,
+                anim: { enable: false }
+            },
+            size: {
+                value: 3,
+                random: true,
+                anim: { enable: false }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#ffd700',
+                opacity: 0.2,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: 'none',
+                random: false,
+                straight: false,
+                out_mode: 'out',
+                bounce: false
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: { enable: true, mode: 'grab' },
+                onclick: { enable: true, mode: 'push' },
+                resize: true
+            },
+            modes: {
+                grab: { distance: 140, line_linked: { opacity: 1 } },
+                push: { particles_nb: 4 }
+            }
+        },
+        retina_detect: true
+    });
+});
+</script>
+
+
+<!-- Skills Section -->
+
+
+<!-- Skills Section -->
+<section class="skills" id="skills">
+    <div class="wave-container">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <div id="particles-js-skills"></div>
+    <div class="skills-content">
+        <h2 class="section-title">Technical Skills</h2>
+        
+        <div class="skills-grid">
+            <!-- Technologies -->
+            <div class="skills-category">
+                <h3>Technologies</h3>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                        <div class="tech-info">
+                            <h4>HTML5</h4>
+                            <div class="tech-level">
+                                <div class="level-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                        <div class="tech-info">
+                            <h4>CSS3</h4>
+                            <div class="tech-level">
+                                <div class="level-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                        <div class="tech-info">
+                            <h4>JavaScript</h4>
+                            <div class="tech-level">
+                                <div class="level-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                        <div class="tech-info">
+                            <h4>MySQL</h4>
+                            <div class="tech-level">
+                                <div class="level-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <img src="https://hibernate.org/images/hibernate-logo.svg" alt="Hibernate">
+                        <div class="tech-info">
+                            <h4>Hibernate</h4>
+                            <div class="tech-level">
+                                <div class="level-bar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                        <div class="tech-info">
+                            <h4>Java</h4>
+                            <div class="tech-level">
+                                <div class="level-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Tools -->
+            <div class="skills-category">
+                <h3>Development Tools</h3>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+                        <h4>VS Code</h4>
+                        <p>Primary IDE</p>
+                    </div>
+
+                    <div class="tool-card">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                        <h4>GitHub</h4>
+                        <p>Version Control</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.skills {
+    position: relative;
+    min-height: 100vh;
+    background: #0a192f;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.skills-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: #ffd700;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.skills-grid {
+    display: grid;
+    gap: 40px;
+}
+
+.skills-category {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skills-category h3 {
+    color: #ffd700;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tech-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+}
+
+.tech-card img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+.tech-card:hover img {
+    filter: brightness(1) invert(0);
+}
+
+.tech-info {
+    flex: 1;
+}
+
+.tech-info h4 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.tech-level {
+    background: rgba(255, 255, 255, 0.1);
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.level-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ffd700, #ff9d00);
+    border-radius: 3px;
+    transition: width 1s ease;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tool-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+}
+
+.tool-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tool-card:hover img {
+    transform: rotate(360deg);
+    filter: brightness(1) invert(0);
+}
+
+.tool-card h4 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.tool-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .skills-category {
+        padding: 20px;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tech-card {
+        padding: 15px;
+    }
+
+    .tool-card {
+        padding: 15px;
+    }
+}
+</style>
+
+<style>
+    #particles-js-skills {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.skills-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Add this animation for particle glow effect */
+@keyframes particleGlow {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.5); }
+    100% { filter: brightness(1); }
+}
+
+.particles-js-canvas-el {
+    animation: particleGlow 3s infinite;
+}
+</style>
+
+<script>
+    particlesJS("particles-js-skills", {
+    particles: {
+        number: {
+            value: 80,
+            density: {
+                enable: true,
+                value_area: 800
+            }
+        },
+        color: {
+            value: ["#ffd700", "#ff9d00", "#ff6b6b"]
+        },
+        shape: {
+            type: ["circle", "triangle", "polygon"],
+            polygon: {
+                nb_sides: 6
+            }
+        },
+        opacity: {
+            value: 0.6,
+            random: true,
+            anim: {
+                enable: true,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false
+            }
+        },
+        size: {
+            value: 5,
+            random: true,
+            anim: {
+                enable: true,
+                speed: 4,
+                size_min: 0.3,
+                sync: false
+            }
+        },
+        line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffd700",
+            opacity: 0.4,
+            width: 1
+        },
+        move: {
+            enable: true,
+            speed: 2,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "bounce",
+            bounce: true,
+            attract: {
+                enable: true,
+                rotateX: 600,
+                rotateY: 1200
+            }
+        }
+    },
+    interactivity: {
+        detect_on: "canvas",
+        events: {
+            onhover: {
+                enable: true,
+                mode: ["grab", "bubble"]
+            },
+            onclick: {
+                enable: true,
+                mode: "push"
+            },
+            resize: true
+        },
+        modes: {
+            grab: {
+                distance: 140,
+                line_linked: {
+                    opacity: 1
+                }
+            },
+            bubble: {
+                distance: 200,
+                size: 12,
+                duration: 2,
+                opacity: 0.8,
+                speed: 3
+            },
+            push: {
+                particles_nb: 4
+            }
+        }
+    },
+    retina_detect: true
+});
+</script>
+
+
+<!-- Education Section -->
+<section id="education" class="education-section">
+    <div id="particles-education"></div>
+    
+    <div class="education-content">
+        <!-- <div class="education-card"> -->
+            <h2 class="section-title">Education</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Bachelor of Computer Science</h3>
+                        <h4>Krishna Chaitanya Institute of Technology & Sceines</h4>
+                        <p class="timeline-date">2021 - 2024</p>
+                        <p class="timeline-description">Computer Science & Engineering</p>
+                        <p class="timeline-description">Percentage : 65.5%</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Intermediate</h3>
+                        <h4>Sri Sadha junior college, Markapuram.</h4>
+                        <p class="timeline-date">2019 - 2021</p>
+                        <p class="timeline-description">MPC</p>
+                        <p class="timeline-date">Marks : 765</p>
+                         
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Secondary Board of Education</h3>
+                        <!-- <ul class="certification-list">
+                            <li>Web Development Bootcamp</li>
+                            <li>Advanced JavaScript Course</li>
+                            <li>React.js Certification</li>
+                        </ul> -->
+                        
+                        <h4>Z.P High, Sunkesula.</h4>
+                        <p class="timeline-date">2019 </p>
+                       
+                        <p class="timeline-date">GPA : 9.3</p>
+                         
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+</section>
+
+<style>
+/* Education Section Styles */
+.education-section {
+    position: relative;
+    min-height: 100vh;
+    background: #0a192f;
+    color: #ffffff;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+#particles-education {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.education-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.education-card {
+    background: rgba(17, 34, 64, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto 0;
+    padding: 20px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: #ffd700;
+    top: 0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #ffd700;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-content {
+    width: 45%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: 55%;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 55%;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.timeline-content h3 {
+    color: #ffd700;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.timeline-content h4 {
+    color: #e6f1ff;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.timeline-date {
+    color: #ffd700;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.timeline-description {
+    color: #e6f1ff;
+    line-height: 1.6;
+}
+
+.certification-list {
+    list-style: none;
+    padding: 0;
+}
+
+.certification-list li {
+    color: #e6f1ff;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.certification-list li::before {
+    content: '⚡';
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item {
+        justify-content: flex-start;
+    }
+
+    .timeline-dot {
+        left: 30px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-right: 0;
+        margin-left: 60px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .education-card {
+        padding: 20px;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-content h4 {
+        font-size: 1rem;
+    }
+}
+</style>
+
+<!-- Initialize particles.js for Education section -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    particlesJS('particles-education', {
+        particles: {
+            number: { value: 50, density: { enable: true, value_area: 800 } },
+            color: { value: '#ffd700' },
+            shape: { type: 'circle' },
+            opacity: {
+                value: 0.5,
+                random: false,
+                anim: { enable: false }
+            },
+            size: {
+                value: 3,
+                random: true,
+                anim: { enable: false }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#ffd700',
+                opacity: 0.2,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: 'none',
+                random: false,
+                straight: false,
+                out_mode: 'out',
+                bounce: false
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: { enable: true, mode: 'grab' },
+                onclick: { enable: true, mode: 'push' },
+                resize: true
+            },
+            modes: {
+                grab: { distance: 140, line_linked: { opacity: 1 } },
+                push: { particles_nb: 4 }
+            }
+        },
+        retina_detect: true
+    });
+});
+</script>
+
+
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section">
+    <div id="particles-projects"></div>
+    
+    <div class="projects-content">
+        
+            <h2 class="section-title">Projects</h2>
+            
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="fullstack">Frontend</button>
+                <button class="filter-btn" data-filter="react">Fullstack</button>
+                <button class="filter-btn" data-filter="api">Backend</button>
+            </div>
+
+            <!-- Projects Grid -->
+           <div class="projects-grid">
+    <!-- Project Card 1 -->
+    <div class="project-item" data-category="fullstack">
+        <div class="project-card">
+            <div class="project-image">
+                <img src="https://res.cloudinary.com/dvknx0hpm/image/upload/v1748352901/Screenshot_2025-05-27_190421_nefoyr.png" alt="Project 1">
+                <div class="project-overlay">
+                    <div class="project-content">
+                        <h3>Project Title 1</h3>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Java Script</span>
+                        </div>
+                        <p class="project-description">PR Skill Verse Institute Website – SAP Training Institute Frontend Development</p>
+                        <div class="project-links">
+                            <a href="#prskillverse.com" class="project-btn demo-btn">Live Demo</a>
+                            <a href="#" class="project-btn github-btn">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Card 2 -->
+    <div class="project-item" data-category="react">
+        <div class="project-card">
+            <div class="project-image">
+                <img src="project2-image.jpg" alt="Project 2">
+                <div class="project-overlay">
+                    <div class="project-content">
+                        <h3>Project Title 2</h3>
+                        <div class="tech-stack">
+                            <span>React</span>
+                            <span>Redux</span>
+                            <span>Material-UI</span>
+                        </div>
+                        <p class="project-description">Interactive React application with state management and modern UI.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-btn demo-btn">Live Demo</a>
+                            <a href="#" class="project-btn github-btn">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Card 3 -->
+    <div class="project-item" data-category="api">
+        <div class="project-card">
+            <div class="project-image">
+                <img src="" alt="Project 3">
+                <div class="project-overlay">
+                    <div class="project-content">
+                        <h3>Project Title 3</h3>
+                        <div class="tech-stack">
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>REST API</span>
+                        </div>
+                        <p class="project-description">RESTful API service with comprehensive documentation and testing.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-btn demo-btn">Live Demo</a>
+                            <a href="#" class="project-btn github-btn">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+
+   
+</section>
+
+<style>
+/* Projects Section Styles */
+.projects-section {
+    position: relative;
+    min-height: 100vh;
+    background: #0a192f;
+    color: #ffffff;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+#particles-projects {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.projects-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.project-card {
+    background: transparent;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    height: 300px;
+    position: relative;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    padding: 20px;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+.project-content {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.project-card:hover .project-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.project-content h3 {
+    color: #ffd700;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.project-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: #ffd700;
+}
+
+.tech-stack {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.tech-stack span {
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .tech-stack span {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.tech-stack span:nth-child(2) { transition-delay: 0.1s; }
+.tech-stack span:nth-child(3) { transition-delay: 0.2s; }
+
+.project-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease 0.2s;
+}
+
+.project-card:hover .project-links {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.project-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.demo-btn {
+    background: #ffd700;
+    color: #0a192f;
+}
+
+.github-btn {
+    background: transparent;
+    border: 2px solid #ffd700;
+    color: #ffd700;
+}
+
+.project-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .project-card {
+        height: 250px;
+    }
+
+    .project-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+    }
+}
+/* Filter Tabs */
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid #ffd700;
+    color: #ffd700;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #ffd700;
+    color: #0a192f;
+    transform: translateY(-2px);
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-item {
+    perspective: 1000px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: rotateY(10deg) scale(1.02);
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+    color: #ffd700;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tech-stack span {
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    animation: slideIn 0.5s ease forwards;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.project-card:hover .tech-stack span {
+    animation: slideIn 0.5s ease forwards;
+}
+
+.tech-stack span:nth-child(2) { animation-delay: 0.1s; }
+.tech-stack span:nth-child(3) { animation-delay: 0.2s; }
+
+.project-description {
+    color: #e6f1ff;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-description {
+    opacity: 1;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+}
+
+.project-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.demo-btn {
+    background: #ffd700;
+    color: #0a192f;
+}
+
+.github-btn {
+    background: transparent;
+    border: 2px solid #ffd700;
+    color: #ffd700;
+}
+
+.project-btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    top: 0;
+    left: -100%;
+    transition: 0.5s;
+}
+
+.project-btn:hover::after {
+    left: 100%;
+}
+
+.project-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .projects-card {
+        padding: 20px;
+    }
+
+    .filter-tabs {
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .project-content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-stack span {
+        font-size: 0.8rem;
+    }
+}
+</style>
+
+<!-- Initialize particles.js for Projects section -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize particles
+    particlesJS('particles-projects', {
+        particles: {
+            number: { value: 50, density: { enable: true, value_area: 800 } },
+            color: { value: '#ffd700' },
+            shape: { type: 'circle' },
+            opacity: {
+                value: 0.5,
+                random: false,
+                anim: { enable: false }
+            },
+            size: {
+                value: 3,
+                random: true,
+                anim: { enable: false }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#ffd700',
+                opacity: 0.2,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: 'none',
+                random: false,
+                straight: false,
+                out_mode: 'out',
+                bounce: false
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: { enable: true, mode: 'grab' },
+                onclick: { enable: true, mode: 'push' },
+                resize: true
+            },
+            modes: {
+                grab: { distance: 140, line_linked: { opacity: 1 } },
+                push: { particles_nb: 4 }
+            }
+        },
+        retina_detect: true
+    });
+
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+
+            projectItems.forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+});
+</script>
+
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div id="particles-contact"></div>
+    
+    <div class="contact-content">
+        <div class="contact-card">
+            <h2 class="section-title">Contact Me</h2>
+            
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form" onsubmit="sendWhatsApp(event)">
+                        <div class="form-group">
+                            <input type="text" id="fullName" required placeholder="Full Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required placeholder="Email Address">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="whatsapp" required placeholder="WhatsApp Number">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" required placeholder="Your Message" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Map -->
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31111.2728229994!2d77.59199029163965!3d12.913563424090151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14fc91a93031%3A0xf0afe62576cbdc3f!2zQlRNIOCwsuCxh-CwlOCwn-CxjSwg4LCs4LGG4LCC4LCX4LCz4LGC4LCw4LGBLCDgsJXgsLDgsY3gsKPgsL7gsJ_gsJU!5e0!3m2!1ste!2sin!4v1748367294800!5m2!1ste!2sin"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wave-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#112240" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,192C384,181,480,139,576,138.7C672,139,768,181,864,186.7C960,192,1056,160,1152,138.7C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            <path fill="#1a365d" fill-opacity="0.8" d="M0,192L48,197.3C96,203,192,213,288,202.7C384,192,480,160,576,165.3C672,171,768,213,864,218.7C960,224,1056,192,1152,170.7C1248,149,1344,139,1392,133.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            <path fill="#234681" fill-opacity="0.6" d="M0,224L48,229.3C96,235,192,245,288,234.7C384,224,480,192,576,197.3C672,203,768,245,864,250.7C960,256,1056,224,1152,202.7C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+</section>
+
+
+
+<script>
+
+
+
+function sendWhatsAppMessage(event) {
+    event.preventDefault();
+    
+    // Get form values with validation
+    const formData = {
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        course: document.getElementById('course').value,
+        message: document.getElementById('message').value.trim()
+    };
+
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+        showError('Please fill in all required fields');
+        return false;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+        showError('Please enter a valid email address');
+        return false;
+    }
+
+    // Validate phone number (Indian format)
+    const phoneRegex = /^[6-9]\d{9}$/;
+    if (!phoneRegex.test(formData.phone)) {
+        showError('Please enter a valid 10-digit phone number');
+        return false;
+    }
+
+    try {
+        // Format the message with emojis and structure
+        const formattedMessage = [
+            "🎓 *New Course Inquiry*",
+            "",
+            "👤 *Contact Details*",
+            `Name: ${formData.name}`,
+            `Email: ${formData.email}`,
+            `Phone: ${formData.phone}`,
+            "",
+            "📚 *Course Interest*",
+            `Selected Course: ${formData.course}`,
+            "",
+            "💬 *Message*",
+            formData.message,
+            "",
+            "🕒 Sent on: ${new Date().toLocaleString()}",
+            "Source: PR Skillverse Website"
+        ].join('\n');
+
+        // Create WhatsApp URL with the business number
+        const whatsappURL = `https://wa.me/9959732476`;
+
+        // Show loading state
+        const submitButton = document.querySelector('button[type="submit"]');
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitButton.disabled = true;
+
+        // Open WhatsApp in new tab
+        window.open(whatsappURL, '_blank');
+
+        // Reset form and button state
+        setTimeout(() => {
+            document.getElementById('whatsappForm').reset();
+            submitButton.innerHTML = 'Send Message';
+            submitButton.disabled = false;
+            showSuccess('Message prepared for WhatsApp!');
+        }, 1500);
+
+    } catch (error) {
+        console.error('WhatsApp send error:', error);
+        showError('Unable to open WhatsApp. Please try again later.');
+    }
+
+    return false;
+}
+
+// Helper functions for error and success messages
+function showError(message) {
+    const errorElement = document.getElementById('error-message');
+    errorElement.textContent = message;
+    errorElement.style.display = 'block';
+    errorElement.style.color = '#dc2626';
+    setTimeout(() => {
+        errorElement.style.display = 'none';
+    }, 5000);
+}
+
+function showSuccess(message) {
+    const errorElement = document.getElementById('error-message');
+    errorElement.textContent = message;
+    errorElement.style.display = 'block';
+    errorElement.style.color = '#059669';
+    setTimeout(() => {
+        errorElement.style.display = 'none';
+    }, 3000);
+}
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h3>Current Location</h3>
+                
+                <p>
+                BTM layout 1st Stage 
+                <pre>Banglore, karnataka</pre> </p>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Connect With Me</h4>
+              <div class="social-links">
+                <a href="https://github.com/sasindra143?tab=repositories" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sasindra-madduri/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/vertex_solutions_1922?utm_source=qr&igsh=aDY2bjU2NWNrc2hk" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="http://Wa.me/+919959732476" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Quick Contact</h4>
+                <p><i class="fas fa-envelope"></i> sasindragandla.com</p>
+                <p><i class="fab fa-whatsapp"></i> +919959732476</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 by Sasindra. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+/* Contact Section Styles */
+.contact-section {
+    position: relative;
+    min-height: 100vh;
+    background: #0a192f;
+    color: #ffffff;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+#particles-contact {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.contact-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-card {
+    background: rgba(17, 34, 64, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ffd700;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.submit-btn {
+    background: #ffd700;
+    color: #0a192f;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Map Styles */
+.map-container {
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Styles */
+.footer {
+    background: #0a192f;
+    color: #ffffff;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-info h3 {
+    color: #ffd700;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.footer-social h4,
+.footer-contact h4 {
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: #ffd700;
+    transform: translateY(-3px);
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    .contact-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-card {
+        padding: 20px;
+    }
+
+    .footer-grid {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .submit-btn {
+        width: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+</style>
+
+<script>
+// Initialize particles.js for Contact section
+document.addEventListener('DOMContentLoaded', function() {
+    particlesJS('particles-contact', {
+        particles: {
+            number: { value: 50, density: { enable: true, value_area: 800 } },
+            color: { value: '#ffd700' },
+            shape: { type: 'circle' },
+            opacity: {
+                value: 0.5,
+                random: false,
+                anim: { enable: false }
+            },
+            size: {
+                value: 3,
+                random: true,
+                anim: { enable: false }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#ffd700',
+                opacity: 0.2,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: 'none',
+                random: false,
+                straight: false,
+                out_mode: 'out',
+                bounce: false
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: { enable: true, mode: 'grab' },
+                onclick: { enable: true, mode: 'push' },
+                resize: true
+            },
+            modes: {
+                grab: { distance: 140, line_linked: { opacity: 1 } },
+                push: { particles_nb: 4 }
+            }
+        },
+        retina_detect: true
+    });
+});
+
+// WhatsApp form submission
+function sendWhatsApp(event) {
+    event.preventDefault();
+    
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const whatsapp = document.getElementById('whatsapp').value;
+    const message = document.getElementById('message').value;
+    
+    // Format the message
+    const formattedMessage = `*New Contact Form Submission*%0A%0A*Name:* ${fullName}%0A*Email:* ${email}%0A*WhatsApp:* ${whatsapp}%0A*Message:* ${message}`;
+    
+    // Create WhatsApp URL
+    const whatsappURL = `https://wa.me/9959732476`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappURL, '_blank');
+}
+</script>
+</body>
+</html>
