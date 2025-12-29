@@ -1,0 +1,172 @@
+.hero {
+  min-height: 100vh;
+  background: #000;
+  padding: 260px 100px 160px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* TEXT */
+
+.hero-center {
+  max-width: 960px;
+  margin: auto;
+}
+
+.hero-intro {
+  font-size: 44px;
+  color: #9ca3af;
+  margin-bottom: 28px;
+}
+
+.typing {
+  color: #fff;
+  border-right: 3px solid #fff;
+  padding-right: 6px;
+  animation: caret 0.8s infinite;
+}
+
+.hero-title {
+  font-size: 94px;
+  font-weight: 800;
+  margin-bottom: 36px;
+}
+
+.hero-desc {
+  font-size: 22px;
+  line-height: 1.8;
+  color: #b5b5b5;
+  margin-top: 20px;
+}
+
+/* SKILLS */
+
+.skills-section {
+  margin-top: 80px;
+}
+
+.skills-icons {
+  display: flex;
+  gap: 42px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.skills-icons img {
+  width: 72px;
+  animation: float 3.5s ease-in-out infinite;
+}
+
+/* ROBOT */
+
+.robot-wrapper {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  transition: transform 0.15s ease-out;
+}
+
+.robot-head {
+  width: 220px;
+  height: 150px;
+  border-radius: 28px;
+  background: #050505;
+  padding: 10px;
+  box-shadow: 0 40px 100px rgba(128, 0, 255, 0.6);
+  transform-style: preserve-3d;
+}
+
+.robot-wrapper:hover .robot-head {
+  transform: rotateY(10deg) rotateX(6deg);
+}
+
+/* GLOW */
+
+.robot-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.4), transparent 70%);
+  animation: pulse 3s infinite;
+  z-index: -1;
+}
+
+/* SCREEN */
+
+.robot-screen {
+  position: absolute;
+  inset: 10px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #6d28d9, #9333ea);
+}
+
+.robot-face {
+  position: absolute;
+  inset: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 38px;
+  transition: transform 0.12s ease-out;
+}
+
+/* EYES */
+
+.eye {
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle at 30% 30%, #fff, #d4d4d4);
+  border-radius: 50%;
+  transition: transform 0.15s;
+}
+
+.eye.blink {
+  transform: scaleY(0.1);
+}
+
+/* NECK */
+
+.robot-neck {
+  width: 28px;
+  height: 60px;
+  margin: auto;
+  background: linear-gradient(#999, #333);
+  border-radius: 12px;
+}
+
+/* ANIMATIONS */
+
+@keyframes caret {
+  0% { opacity: 1 }
+  50% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) }
+  50% { transform: translateY(-10px) }
+  100% { transform: translateY(0) }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4 }
+  50% { opacity: 0.8 }
+  100% { opacity: 0.4 }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 200px 40px 140px;
+  }
+
+  .hero-title {
+    font-size: 60px;
+  }
+
+  .robot-wrapper {
+    position: static;
+    margin-top: 80px;
+  }
+}

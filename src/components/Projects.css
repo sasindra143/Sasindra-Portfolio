@@ -1,0 +1,277 @@
+/* =========================
+   AI PROJECTS SECTION
+========================= */
+
+.ai-projects {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #050505, #000);
+  color: #fff;
+  padding: 220px 120px 160px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grid background */
+.ai-projects::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.ai-projects-container {
+  max-width: 1400px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   HEADING (CENTERED)
+========================= */
+
+.ai-projects-heading {
+  font-size: 84px;
+  font-weight: 900;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.ai-projects-subheading {
+  font-size: 22px;
+  color: #a1a1aa;
+  max-width: 760px;
+  margin: 0 auto 100px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* =========================
+   CAROUSEL
+========================= */
+
+.ai-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Navigation buttons */
+.nav-btn {
+  background: none;
+  border: none;
+  font-size: 64px;
+  color: #38bdf8;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-btn:hover {
+  transform: scale(1.25);
+  color: #a855f7;
+}
+
+/* =========================
+   PROJECT CARD
+========================= */
+
+.ai-project-card {
+  display: flex;
+  gap: 80px;
+  background: rgba(10,10,10,0.85);
+  border-radius: 28px;
+  padding: 60px;
+  max-width: 1100px;
+  box-shadow:
+    0 0 50px rgba(168,85,247,0.35);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ai-project-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 0 90px rgba(56,189,248,0.6);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.ai-project-image img {
+  width: 420px;
+  border-radius: 20px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.ai-project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.ai-project-content h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.ai-project-content h4 {
+  font-size: 18px;
+  margin-top: 18px;
+  color: #38bdf8;
+}
+
+.ai-project-content p,
+.ai-project-content li {
+  font-size: 18px;
+  color: #d4d4d8;
+  line-height: 1.7;
+}
+
+.ai-project-content ul {
+  padding-left: 20px;
+}
+
+/* Interview text */
+.interview-text {
+  font-style: italic;
+  color: #e9d5ff;
+  margin-top: 6px;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.ai-project-links {
+  margin-top: 26px;
+  display: flex;
+  gap: 20px;
+}
+
+.ai-project-links a {
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ai-project-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.4);
+}
+
+/* =========================
+   SCROLL REVEAL ANIMATION
+========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.ai-projects.show .reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .ai-project-card {
+    flex-direction: column;
+    padding: 40px;
+    gap: 40px;
+  }
+
+  .ai-project-image img {
+    width: 100%;
+  }
+
+  .ai-projects {
+    padding: 180px 40px 120px;
+  }
+
+  .ai-projects-heading {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ai-projects-heading {
+    font-size: 42px;
+  }
+
+  .ai-projects-subheading {
+    font-size: 18px;
+  }
+
+  .nav-btn {
+    font-size: 48px;
+  }
+}
+
+
+/* =========================
+   TWO COLUMN LAYOUT
+========================= */
+
+.ai-project-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 26px;
+}
+
+.ai-column h4 {
+  font-size: 18px;
+  color: #38bdf8;
+  margin-bottom: 12px;
+}
+
+.ai-column ul {
+  padding-left: 20px;
+}
+
+.ai-column li {
+  font-size: 17px;
+  color: #d4d4d8;
+  margin-bottom: 8px;
+}
+
+.ai-column p {
+  font-size: 17px;
+  color: #e9d5ff;
+  line-height: 1.7;
+}
+
+/* =========================
+   RESPONSIVE (STACK)
+========================= */
+
+@media (max-width: 900px) {
+  .ai-project-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

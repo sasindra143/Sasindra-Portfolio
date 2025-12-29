@@ -1,0 +1,261 @@
+/* =========================
+   AI ABOUT SECTION – BASE
+========================= */
+
+.ai-about {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #050505, #000);
+  color: #ffffff;
+  padding: 220px 120px 160px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grid background */
+.ai-about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.ai-container {
+  max-width: 1600px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 160px;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   LEFT – IMAGE VISUAL
+========================= */
+
+.ai-visual {
+  position: relative;
+  width: 340px;
+  height: 340px;
+
+  /* ENTRY ANIMATION */
+  animation: imageReveal 1.4s ease forwards;
+}
+
+/* Outer rotating ring */
+.ai-ring {
+  position: absolute;
+  inset: -45px;
+  border-radius: 50%;
+  border: 2px solid rgba(56, 189, 248, 0.5);
+  animation: spin 20s linear infinite;
+}
+
+/* Inner rotating ring */
+.ai-ring.inner {
+  inset: -22px;
+  border-color: rgba(168, 85, 247, 0.75);
+  animation-duration: 12s;
+  animation-direction: reverse;
+}
+
+/* Core image */
+.ai-core {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 80px rgba(168, 85, 247, 0.8),
+    0 0 140px rgba(56, 189, 248, 0.5);
+  animation: glowPulse 3s ease-in-out infinite;
+  transition: transform 0.4s ease;
+}
+
+.ai-core:hover {
+  transform: scale(1.06);
+}
+
+/* Profile image */
+.ai-core img {
+  width: 68%;
+  height: 68%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+}
+
+/* EST text */
+.ai-year {
+  margin-top: 14px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #9ca3af;
+}
+
+/* =========================
+   RIGHT – CONTENT
+========================= */
+
+.ai-content {
+  max-width: 1000px;
+}
+
+/* Heading animation */
+.ai-heading {
+  font-size: 96px;
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 40px;
+  letter-spacing: -1px;
+  white-space: nowrap;
+
+  opacity: 0;
+  animation: textReveal 1.2s ease forwards;
+}
+
+/* Quote animation */
+.ai-quote {
+  font-size: 34px;
+  color: #38bdf8;
+  margin-bottom: 40px;
+  line-height: 1.5;
+
+  opacity: 0;
+  animation: textReveal 1.2s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Main text animation */
+.ai-text {
+  font-size: 26px;
+  line-height: 1.9;
+  color: #e5e7eb;
+  margin-bottom: 30px;
+  max-width: 1300px;
+
+  opacity: 0;
+  animation: textReveal 1.2s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* Sub text animation */
+.ai-subtext {
+  font-size: 20px;
+  color: #a1a1aa;
+  line-height: 1.8;
+
+  opacity: 0;
+  animation: textReveal 1.2s ease forwards;
+  animation-delay: 0.9s;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 70px rgba(168,85,247,0.6); }
+  50% { box-shadow: 0 0 140px rgba(56,189,248,0.8); }
+  100% { box-shadow: 0 0 70px rgba(168,85,247,0.6); }
+}
+
+/* Image reveal */
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Text reveal */
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .ai-container {
+    flex-direction: column;
+    gap: 90px;
+    text-align: center;
+  }
+
+  .ai-heading {
+    font-size: 64px;
+    white-space: normal;
+  }
+
+  .ai-about {
+    padding: 180px 20px 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ai-heading {
+    font-size: 44px;
+  }
+
+  .ai-quote {
+    font-size: 24px;
+  }
+
+  .ai-text {
+    font-size: 20px;
+  }
+}
+
+
+/* =========================
+   SCROLL REVEAL BASE
+========================= */
+
+.reveal-text,
+.reveal-image {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+/* When section is visible */
+.ai-about.show .reveal-text,
+.ai-about.show .reveal-image {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delays for text */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }

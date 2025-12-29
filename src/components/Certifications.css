@@ -1,0 +1,158 @@
+/* =========================
+   AI CERTIFICATIONS SECTION
+========================= */
+
+.ai-cert {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #050505, #000);
+  color: #fff;
+  padding: 220px 120px 160px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grid background */
+.ai-cert::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.ai-cert-container {
+  max-width: 1400px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+.ai-cert-heading {
+  font-size: 84px;
+  font-weight: 900;
+  margin-bottom: 24px;
+}
+
+.ai-cert-subheading {
+  font-size: 22px;
+  color: #a1a1aa;
+  max-width: 820px;
+  margin: 0 auto 100px;
+  line-height: 1.7;
+}
+
+/* =========================
+   GRID (3 COLUMNS)
+========================= */
+
+.ai-cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.ai-cert-card {
+  background: rgba(10,10,10,0.85);
+  border-radius: 26px;
+  padding: 36px;
+  box-shadow: 0 0 40px rgba(168,85,247,0.35);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ai-cert-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 80px rgba(56,189,248,0.6);
+}
+
+/* =========================
+   IMAGE (SMALLER)
+========================= */
+
+.ai-cert-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.ai-cert-content h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.cert-provider {
+  display: block;
+  font-size: 15px;
+  color: #38bdf8;
+  margin-bottom: 14px;
+}
+
+.cert-desc {
+  font-size: 16px;
+  color: #d4d4d8;
+  line-height: 1.6;
+}
+
+/* =========================
+   LINK
+========================= */
+
+.cert-link {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .ai-cert {
+    padding: 180px 40px 120px;
+  }
+
+  .ai-cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ai-cert-heading {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ai-cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-cert-heading {
+    font-size: 42px;
+  }
+}

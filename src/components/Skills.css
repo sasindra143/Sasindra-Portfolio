@@ -1,0 +1,141 @@
+/* =========================
+   AI SKILLS SECTION
+========================= */
+
+.ai-skills {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #050505, #000);
+  color: #fff;
+
+  /* ⬇⬇ INCREASED TOP PADDING ⬇⬇ */
+  padding: 220px 120px 160px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grid background */
+.ai-skills::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.ai-skills-container {
+  max-width: 1400px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+.ai-skills-heading {
+  font-size: 84px;
+  font-weight: 900;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.ai-skills-subheading {
+  font-size: 22px;
+  color: #a1a1aa;
+  max-width: 720px;
+  margin: auto;
+  line-height: 1.7;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.ai-skills-grid {
+  margin-top: 110px; /* ⬅ slightly increased */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 60px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.ai-skill-card {
+  background: rgba(10, 10, 10, 0.8);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow:
+    0 0 40px rgba(168, 85, 247, 0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.ai-skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 0 70px rgba(56, 189, 248, 0.6);
+}
+
+.ai-skill-card h3 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   SKILL ITEM
+========================= */
+
+.ai-skill {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.ai-skill img {
+  width: 42px;
+}
+
+.ai-skill span {
+  font-size: 20px;
+  flex: 1;
+  text-align: left;
+}
+
+.ai-skill small {
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(168, 85, 247, 0.25);
+  color: #e9d5ff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .ai-skills {
+    padding: 180px 40px 120px; /* ⬅ mobile top spacing */
+  }
+
+  .ai-skills-heading {
+    font-size: 54px;
+  }
+
+  .ai-skills-grid {
+    margin-top: 70px;
+  }
+}

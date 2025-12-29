@@ -1,0 +1,154 @@
+/* =========================
+   AI CONTACT SECTION
+========================= */
+
+.ai-contact {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #050505, #000);
+  color: #fff;
+  padding: 220px 120px 160px;
+  position: relative;
+}
+
+/* Grid background */
+.ai-contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.ai-contact-container {
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+.ai-contact-heading {
+  font-size: 84px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.ai-contact-subheading {
+  font-size: 22px;
+  color: #a1a1aa;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 100px;
+  line-height: 1.7;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.ai-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.ai-contact-form {
+  background: rgba(10,10,10,0.85);
+  padding: 50px;
+  border-radius: 26px;
+  box-shadow: 0 0 40px rgba(168,85,247,0.35);
+}
+
+.ai-contact-form h3 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.ai-contact-form input,
+.ai-contact-form textarea {
+  width: 100%;
+  background: #000;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.ai-contact-form button {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  color: #000;
+  font-weight: 700;
+}
+
+/* =========================
+   CONTACT INFO
+========================= */
+
+.ai-contact-info {
+  background: rgba(10,10,10,0.85);
+  padding: 50px;
+  border-radius: 26px;
+  box-shadow: 0 0 40px rgba(56,189,248,0.35);
+}
+
+.ai-contact-info h3 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.ai-contact-info a {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #d4d4d8;
+  text-decoration: none;
+}
+
+.ai-contact-info a:hover {
+  color: #38bdf8;
+}
+
+.ai-contact-info .whatsapp {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .ai-contact {
+    padding: 180px 40px 120px;
+  }
+
+  .ai-contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-contact-heading {
+    font-size: 56px;
+  }
+}

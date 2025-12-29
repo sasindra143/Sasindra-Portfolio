@@ -1,0 +1,133 @@
+/* ================================
+   GLOBAL RESET & BASE STYLES
+================================ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* ================================
+   ROOT & BODY
+================================ */
+
+:root {
+  --bg-black: #000000;
+  --text-white: #ffffff;
+  --text-muted: #a8a8a8;
+  --primary-blue: #4da3ff;
+  --gradient-text: linear-gradient(180deg, #ffffff, #9ca3af);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg-black);
+  color: var(--text-white);
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
+}
+
+/* ================================
+   LINKS
+================================ */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--text-white);
+}
+
+/* ================================
+   HEADINGS
+================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-white);
+}
+
+/* ================================
+   BUTTONS (GLOBAL)
+================================ */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* ================================
+   SELECTION (Nice Touch)
+================================ */
+
+::selection {
+  background: rgba(77, 163, 255, 0.3);
+  color: #ffffff;
+}
+
+/* ================================
+   SCROLLBAR (DESKTOP)
+================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+/* ================================
+   REMOVE VITE DEFAULT STYLES
+================================ */
+
+button:focus,
+button:focus-visible {
+  outline: none;
+}
+
+/* ================================
+   RESPONSIVE TEXT SAFETY
+================================ */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+}

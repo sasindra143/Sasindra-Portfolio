@@ -1,0 +1,134 @@
+/* =========================
+   AI FOOTER
+========================= */
+
+.ai-footer {
+  background: radial-gradient(circle at top, #050505, #000);
+  color: #fff;
+  padding: 90px 120px 40px;
+  position: relative;
+}
+
+/* Top glow line */
+.ai-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(56,189,248,0.6),
+    rgba(168,85,247,0.6),
+    transparent
+  );
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.ai-footer-container {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 80px;
+}
+
+/* =========================
+   BRANDING
+========================= */
+
+.ai-footer-brand h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.ai-footer-brand p {
+  font-size: 16px;
+  color: #a1a1aa;
+  line-height: 1.6;
+  max-width: 420px;
+}
+
+/* =========================
+   QUICK LINKS
+========================= */
+
+.ai-footer-links h4,
+.ai-footer-socials h4 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.ai-footer-links a {
+  display: block;
+  margin-bottom: 12px;
+  color: #d4d4d8;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.ai-footer-links a:hover {
+  color: #38bdf8;
+}
+
+/* =========================
+   SOCIALS WITH TEXT
+========================= */
+
+.ai-footer-socials a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  text-decoration: none;
+  color: #d4d4d8;
+  font-size: 16px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.ai-footer-socials a span {
+  font-size: 22px;
+}
+
+.ai-footer-socials a:hover {
+  transform: translateX(6px);
+  color: #38bdf8;
+}
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.ai-footer-copy {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .ai-footer {
+    padding: 70px 40px 30px;
+  }
+
+  .ai-footer-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+
+  .ai-footer-socials a {
+    justify-content: center;
+  }
+}
