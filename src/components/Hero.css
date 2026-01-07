@@ -155,18 +155,118 @@
 }
 
 /* RESPONSIVE */
+/* =========================
+   RESPONSIVE FIXES
+========================= */
 
+/* TABLETS */
 @media (max-width: 1024px) {
   .hero {
-    padding: 200px 40px 140px;
+    padding: 180px 40px 120px;
+  }
+
+  .hero-intro {
+    font-size: 32px;
   }
 
   .hero-title {
-    font-size: 60px;
+    font-size: 58px;
+  }
+
+  .hero-desc {
+    font-size: 18px;
+  }
+
+  .skills-icons img {
+    width: 60px;
   }
 
   .robot-wrapper {
     position: static;
     margin-top: 80px;
+  }
+}
+
+/* LARGE PHONES */
+@media (max-width: 768px) {
+  .hero {
+    padding: 140px 24px 100px;
+  }
+
+  .hero-intro {
+    font-size: 26px;
+  }
+
+  .hero-title {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+
+  .hero-desc {
+    font-size: 16px;
+  }
+
+  .skills-section {
+    margin-top: 60px;
+  }
+
+  .skills-icons {
+    gap: 28px;
+  }
+
+  .skills-icons img {
+    width: 52px;
+  }
+
+  .robot-head {
+    width: 180px;
+    height: 125px;
+  }
+
+  .robot-neck {
+    height: 48px;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+  .hero {
+    padding: 120px 18px 80px;
+  }
+
+  .hero-intro {
+    font-size: 22px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .skills-icons {
+    gap: 22px;
+  }
+
+  .skills-icons img {
+    width: 46px;
+    animation: none; /* kill float animation on low-end devices */
+  }
+
+  .robot-wrapper {
+    margin-top: 60px;
+    transform: none !important; /* disable cursor movement */
+  }
+
+  .robot-head {
+    width: 150px;
+    height: 110px;
+  }
+
+  .robot-glow {
+    inset: -12px;
   }
 }
