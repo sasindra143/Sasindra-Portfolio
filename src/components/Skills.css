@@ -7,9 +7,7 @@
   background: radial-gradient(circle at top, #050505, #000);
   color: #fff;
 
-  /* ⬇⬇ INCREASED TOP PADDING ⬇⬇ */
   padding: 220px 120px 160px;
-
   position: relative;
   overflow: hidden;
 }
@@ -62,7 +60,7 @@
 ========================= */
 
 .ai-skills-grid {
-  margin-top: 110px; /* ⬅ slightly increased */
+  margin-top: 110px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 60px;
@@ -84,8 +82,7 @@
 
 .ai-skill-card:hover {
   transform: translateY(-10px);
-  box-shadow:
-    0 0 70px rgba(56, 189, 248, 0.6);
+  box-shadow: 0 0 70px rgba(56, 189, 248, 0.6);
 }
 
 .ai-skill-card h3 {
@@ -123,19 +120,99 @@
 }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE — TABLETS
 ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .ai-skills {
-    padding: 180px 40px 120px; /* ⬅ mobile top spacing */
+    padding: 180px 60px 140px;
   }
 
   .ai-skills-heading {
-    font-size: 54px;
+    font-size: 60px;
+  }
+
+  .ai-skills-subheading {
+    font-size: 18px;
   }
 
   .ai-skills-grid {
-    margin-top: 70px;
+    margin-top: 80px;
+    gap: 40px;
+  }
+
+  .ai-skill-card {
+    padding: 32px;
+  }
+}
+
+/* =========================
+   RESPONSIVE — PHONES
+========================= */
+
+@media (max-width: 768px) {
+  .ai-skills {
+    padding: 140px 24px 100px;
+  }
+
+  .ai-skills-heading {
+    font-size: 42px;
+  }
+
+  .ai-skills-subheading {
+    font-size: 16px;
+  }
+
+  .ai-skills-grid {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+    gap: 30px;
+  }
+
+  .ai-skill-card h3 {
+    font-size: 22px;
+  }
+
+  .ai-skill span {
+    font-size: 18px;
+  }
+
+  .ai-skill img {
+    width: 36px;
+  }
+}
+
+/* =========================
+   RESPONSIVE — SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+  .ai-skills {
+    padding: 120px 18px 80px;
+  }
+
+  .ai-skills-heading {
+    font-size: 32px;
+  }
+
+  .ai-skills-subheading {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .ai-skill {
+    gap: 14px;
+  }
+
+  .ai-skill span {
+    font-size: 16px;
+  }
+
+  .ai-skill small {
+    font-size: 12px;
+  }
+
+  .ai-skill-card {
+    padding: 26px;
   }
 }
