@@ -1,17 +1,18 @@
 /* =========================
-   AI CONTACT SECTION
+   AI CERTIFICATIONS SECTION
 ========================= */
 
-.ai-contact {
+.ai-cert {
   min-height: 100vh;
   background: radial-gradient(circle at top, #050505, #000);
   color: #fff;
   padding: 220px 120px 160px;
   position: relative;
+  overflow: hidden;
 }
 
 /* Grid background */
-.ai-contact::before {
+.ai-cert::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -19,15 +20,17 @@
     linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
   background-size: 80px 80px;
+  pointer-events: none;
 }
 
 /* =========================
    CONTAINER
 ========================= */
 
-.ai-contact-container {
-  max-width: 1200px;
+.ai-cert-container {
+  max-width: 1400px;
   margin: auto;
+  text-align: center;
   position: relative;
   z-index: 2;
 }
@@ -36,18 +39,16 @@
    HEADINGS
 ========================= */
 
-.ai-contact-heading {
+.ai-cert-heading {
   font-size: 84px;
   font-weight: 900;
-  text-align: center;
   margin-bottom: 24px;
 }
 
-.ai-contact-subheading {
+.ai-cert-subheading {
   font-size: 22px;
   color: #a1a1aa;
-  text-align: center;
-  max-width: 700px;
+  max-width: 820px;
   margin: 0 auto 100px;
   line-height: 1.7;
 }
@@ -56,99 +57,169 @@
    GRID
 ========================= */
 
-.ai-contact-grid {
+.ai-cert-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
 }
 
 /* =========================
-   FORM
+   CARD
 ========================= */
 
-.ai-contact-form {
+.ai-cert-card {
   background: rgba(10,10,10,0.85);
-  padding: 50px;
   border-radius: 26px;
+  padding: 36px;
   box-shadow: 0 0 40px rgba(168,85,247,0.35);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.ai-contact-form h3 {
-  font-size: 26px;
-  margin-bottom: 30px;
+.ai-cert-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 80px rgba(56,189,248,0.6);
 }
 
-.ai-contact-form input,
-.ai-contact-form textarea {
+/* =========================
+   IMAGE
+========================= */
+
+.ai-cert-image img {
   width: 100%;
-  background: #000;
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 14px 16px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  color: #fff;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.ai-cert-content h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.cert-provider {
+  display: block;
+  font-size: 15px;
+  color: #38bdf8;
+  margin-bottom: 14px;
+}
+
+.cert-desc {
   font-size: 16px;
+  color: #d4d4d8;
+  line-height: 1.6;
 }
 
-.ai-contact-form button {
-  width: 100%;
-  padding: 14px;
-  font-size: 18px;
+/* =========================
+   LINK
+========================= */
+
+.cert-link {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 26px;
   border-radius: 999px;
-  border: none;
-  cursor: pointer;
   background: linear-gradient(135deg, #38bdf8, #a855f7);
   color: #000;
-  font-weight: 700;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 /* =========================
-   CONTACT INFO
+   RESPONSIVE — LAPTOP
 ========================= */
 
-.ai-contact-info {
-  background: rgba(10,10,10,0.85);
-  padding: 50px;
-  border-radius: 26px;
-  box-shadow: 0 0 40px rgba(56,189,248,0.35);
-}
+@media (max-width: 1200px) {
+  .ai-cert {
+    padding: 180px 60px 140px;
+  }
 
-.ai-contact-info h3 {
-  font-size: 26px;
-  margin-bottom: 30px;
-}
+  .ai-cert-heading {
+    font-size: 60px;
+  }
 
-.ai-contact-info a {
-  display: block;
-  margin-bottom: 20px;
-  font-size: 18px;
-  color: #d4d4d8;
-  text-decoration: none;
-}
+  .ai-cert-subheading {
+    font-size: 18px;
+    margin-bottom: 80px;
+  }
 
-.ai-contact-info a:hover {
-  color: #38bdf8;
-}
-
-.ai-contact-info .whatsapp {
-  color: #22c55e;
-  font-weight: 600;
+  .ai-cert-grid {
+    gap: 40px;
+  }
 }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE — TABLET
 ========================= */
 
 @media (max-width: 900px) {
-  .ai-contact {
-    padding: 180px 40px 120px;
+  .ai-cert {
+    padding: 140px 32px 120px;
   }
 
-  .ai-contact-grid {
+  .ai-cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .ai-cert-heading {
+    font-size: 48px;
+  }
+
+  .ai-cert-card {
+    padding: 28px;
+  }
+
+  .ai-cert-image img {
+    height: 160px;
+  }
+}
+
+/* =========================
+   RESPONSIVE — MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .ai-cert {
+    padding: 120px 18px 90px;
+  }
+
+  .ai-cert-grid {
     grid-template-columns: 1fr;
   }
 
-  .ai-contact-heading {
-    font-size: 56px;
+  .ai-cert-heading {
+    font-size: 34px;
+  }
+
+  .ai-cert-subheading {
+    font-size: 15px;
+    margin-bottom: 60px;
+  }
+
+  .ai-cert-card {
+    padding: 24px;
+  }
+
+  .ai-cert-content h3 {
+    font-size: 20px;
+  }
+
+  .cert-desc {
+    font-size: 14px;
+  }
+
+  .ai-cert-image img {
+    height: 140px;
+  }
+
+  .cert-link {
+    padding: 12px 22px;
+    font-size: 13px;
   }
 }
