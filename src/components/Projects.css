@@ -35,7 +35,7 @@
 }
 
 /* =========================
-   HEADING (CENTERED)
+   HEADING
 ========================= */
 
 .ai-projects-heading {
@@ -91,15 +91,13 @@
   border-radius: 28px;
   padding: 60px;
   max-width: 1100px;
-  box-shadow:
-    0 0 50px rgba(168,85,247,0.35);
+  box-shadow: 0 0 50px rgba(168,85,247,0.35);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .ai-project-card:hover {
   transform: translateY(-10px);
-  box-shadow:
-    0 0 90px rgba(56,189,248,0.6);
+  box-shadow: 0 0 90px rgba(56,189,248,0.6);
 }
 
 /* =========================
@@ -108,6 +106,7 @@
 
 .ai-project-image img {
   width: 420px;
+  max-width: 100%;
   border-radius: 20px;
   object-fit: cover;
   transition: transform 0.6s ease;
@@ -143,7 +142,6 @@
   padding-left: 20px;
 }
 
-/* Interview text */
 .interview-text {
   font-style: italic;
   color: #e9d5ff;
@@ -157,7 +155,8 @@
 .ai-project-links {
   margin-top: 26px;
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .ai-project-links a {
@@ -176,64 +175,7 @@
 }
 
 /* =========================
-   SCROLL REVEAL ANIMATION
-========================= */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s ease;
-}
-
-.ai-projects.show .reveal {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.delay-1 { transition-delay: 0.2s; }
-.delay-2 { transition-delay: 0.4s; }
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 1100px) {
-  .ai-project-card {
-    flex-direction: column;
-    padding: 40px;
-    gap: 40px;
-  }
-
-  .ai-project-image img {
-    width: 100%;
-  }
-
-  .ai-projects {
-    padding: 180px 40px 120px;
-  }
-
-  .ai-projects-heading {
-    font-size: 56px;
-  }
-}
-
-@media (max-width: 600px) {
-  .ai-projects-heading {
-    font-size: 42px;
-  }
-
-  .ai-projects-subheading {
-    font-size: 18px;
-  }
-
-  .nav-btn {
-    font-size: 48px;
-  }
-}
-
-
-/* =========================
-   TWO COLUMN LAYOUT
+   TWO COLUMN DETAILS
 ========================= */
 
 .ai-project-columns {
@@ -249,29 +191,93 @@
   margin-bottom: 12px;
 }
 
-.ai-column ul {
-  padding-left: 20px;
-}
-
-.ai-column li {
-  font-size: 17px;
-  color: #d4d4d8;
-  margin-bottom: 8px;
-}
-
+.ai-column li,
 .ai-column p {
   font-size: 17px;
-  color: #e9d5ff;
+  color: #d4d4d8;
   line-height: 1.7;
 }
 
 /* =========================
-   RESPONSIVE (STACK)
+   RESPONSIVE — LAPTOP
+========================= */
+
+@media (max-width: 1200px) {
+  .ai-projects {
+    padding: 180px 60px 140px;
+  }
+
+  .ai-projects-heading {
+    font-size: 60px;
+  }
+
+  .ai-project-card {
+    gap: 50px;
+    padding: 48px;
+  }
+}
+
+/* =========================
+   RESPONSIVE — TABLET
 ========================= */
 
 @media (max-width: 900px) {
+  .ai-projects {
+    padding: 140px 32px 120px;
+  }
+
+  .ai-project-card {
+    flex-direction: column;
+    padding: 36px;
+    gap: 32px;
+  }
+
   .ai-project-columns {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .ai-projects-heading {
+    font-size: 48px;
+  }
+
+  .nav-btn {
+    font-size: 48px;
+  }
+}
+
+/* =========================
+   RESPONSIVE — MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .ai-projects {
+    padding: 120px 18px 90px;
+  }
+
+  .ai-projects-heading {
+    font-size: 34px;
+  }
+
+  .ai-projects-subheading {
+    font-size: 15px;
+    margin-bottom: 60px;
+  }
+
+  .ai-project-card {
+    padding: 26px;
+  }
+
+  .ai-project-content h2 {
+    font-size: 24px;
+  }
+
+  .ai-project-content p,
+  .ai-project-content li {
+    font-size: 15px;
+  }
+
+  .nav-btn {
+    font-size: 36px;
   }
 }
