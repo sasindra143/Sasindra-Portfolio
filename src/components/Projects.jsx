@@ -5,7 +5,7 @@ const projects = [
   {
     title: "PR Skill Verse – Online Learning Platform (LMS)",
     image:
-      "https://res.cloudinary.com/dvknx0hpm/image/upload/v1770431009/Screenshot_2026-02-07_075312_xixwcf.png",
+      "https://res.cloudinary.com/dvknx0hpm/image/upload/v1770429747/Screenshot_2026-02-07_072614_ewczq3.png",
     description:
       "Developed a full-stack Learning Management System where students can access courses and video lessons. Implemented authentication, course management, and responsive dashboards for both admins and learners.",
     tech: "React, JavaScript, HTML5, CSS3, Firebase Authentication, Firestore, Netlify",
@@ -16,12 +16,12 @@ const projects = [
   {
     title: "Vaakya Creations – Women's Clothing E-Commerce",
     image:
-      "https://res.cloudinary.com/dvknx0hpm/image/upload/v1770429747/Screenshot_2026-02-07_072614_ewczq3.png",
+      "https://res.cloudinary.com/dvknx0hpm/image/upload/v1770431009/Screenshot_2026-02-07_075312_xixwcf.png",
     description:
       "Built a responsive women's clothing e-commerce website showcasing product collections and modern UI components with smooth navigation to improve the online shopping experience.",
     tech: "React, Node.js, JavaScript, HTML5, CSS3, MySQL",
-    live: "https://vaakya-creations.netlify.app",
-    github: "https://github.com/sasindra143",
+    live: "https://vaakya-creations.netlify.app/",
+    github: "https://github.com/sasindra143/Vaakya-Creations",
   },
 
   {
@@ -31,8 +31,8 @@ const projects = [
     description:
       "Developed a modern business website to showcase services like web development, portfolio creation, branding and digital solutions for startups and students.",
     tech: "React, JavaScript, HTML5, CSS3, Netlify",
-    live: "https://www.360vertexsolutions.com",
-    github: "https://github.com/sasindra143",
+    live: "https://360vertexsolutions.com/",
+    github: "https://github.com/sasindra143/360-vertex-solutions",
   },
 ];
 
