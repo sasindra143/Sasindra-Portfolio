@@ -1,39 +1,43 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import "./Projects.css";
 
 const projects = [
   {
     title: "PR Skill Verse – Online Learning Platform (LMS)",
-    image: "https://res.cloudinary.com/dvknx0hpm/image/upload/v1748352901/Screenshot_2025-05-27_190421_nefoyr.png",
+    image:
+      "https://res.cloudinary.com/dvknx0hpm/image/upload/v1770431009/Screenshot_2026-02-07_075312_xixwcf.png",
     description:
-      "Developed a full-stack LMS using React (Vite), JavaScript, HTML5, and CSS3 Implemented authentication and role-based access using Firebase Authentication Managed real-time data storage for courses and videos using Firebase Firestore Deployed the application on Netlify with a responsive UI for admin and students",
-    tech: "JAVA, React, JavaScript, HTML, CSS,  Netlify, Fire Base API",
-    live: "https://www.prskillverse.com/",
+      "Developed a full-stack Learning Management System where students can access courses and video lessons. Implemented authentication, course management, and responsive dashboards for both admins and learners.",
+    tech: "React, JavaScript, HTML5, CSS3, Firebase Authentication, Firestore, Netlify",
+    live: "https://www.prskillverse.com",
     github: "https://github.com/sasindra143/pr-skillverse-frontend",
   },
+
   {
-    title: "TODO-LIST",
-    image: "https://res.cloudinary.com/dvknx0hpm/image/upload/v1766993185/Screenshot_2025-12-29_125558_qhuefr.png",
+    title: "Vaakya Creations – Women's Clothing E-Commerce",
+    image:
+      "https://res.cloudinary.com/dvknx0hpm/image/upload/v1770429747/Screenshot_2026-02-07_072614_ewczq3.png",
     description:
-      "A full-stack web platform where students can upload, browse, and purchase academic projects with a dedicated developer dashboard.",
-    tech: "React, HTML, CSS and JAVA Script",
-    live: "https://todo-list-tsk.netlify.app/",
-    github: "https://github.com/sasindra143/TO-DO-LIST-React",
+      "Built a responsive women's clothing e-commerce website showcasing product collections and modern UI components with smooth navigation to improve the online shopping experience.",
+    tech: "React, Node.js, JavaScript, HTML5, CSS3, MySQL",
+    live: "https://vaakya-creations.netlify.app",
+    github: "https://github.com/sasindra143",
   },
+
   {
-    title: "Online Fraud Detection System",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+    title: "360 VertexSolutions – Business Services Website",
+    image:
+      "https://res.cloudinary.com/dvknx0hpm/image/upload/v1773294272/Screenshot_2026-03-12_110821_ssifky.png",
     description:
-      "A machine learning-based system that analyzes transaction data to detect and predict fraudulent online activities.",
-    tech: "Python, Machine Learning, Streamlit",
-    live: "#",
-    github: "https://github.com/sasindra143/OnLine-Fraud-Transaction-Detection-Using-Machine-Learning",
+      "Developed a modern business website to showcase services like web development, portfolio creation, branding and digital solutions for startups and students.",
+    tech: "React, JavaScript, HTML5, CSS3, Netlify",
+    live: "https://www.360vertexsolutions.com",
+    github: "https://github.com/sasindra143",
   },
 ];
 
 export default function Projects() {
   const sectionRef = useRef(null);
-  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,68 +48,75 @@ export default function Projects() {
       },
       { threshold: 0.2 }
     );
+
     if (sectionRef.current) observer.observe(sectionRef.current);
+
     return () => observer.disconnect();
   }, []);
 
-  const prev = () => {
-    setIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
-  };
-
-  const next = () => {
-    setIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
-  };
-
-  const project = projects[index];
-
   return (
-    <section className="ai-projects" id="projects" ref={sectionRef}>
-      <div className="ai-projects-container">
+    <section className="projects-section" id="projects" ref={sectionRef}>
+      <div className="projects-container">
 
-        <h1 className="ai-projects-heading reveal">PROJECTS</h1>
-        <p className="ai-projects-subheading reveal delay-1">
-          Selected projects demonstrating frontend, backend,
-          and problem-solving skills.
+        <h1 className="projects-heading">Projects</h1>
+
+        <p className="projects-subheading">
+          Selected projects demonstrating frontend, backend and
+          problem-solving skills through real-world applications.
         </p>
 
-        {/* CAROUSEL */}
-        <div className="ai-carousel reveal delay-2">
+        <div className="projects-grid">
 
-          <button className="nav-btn left" onClick={prev}>‹</button>
+          {projects.map((project, index) => (
+            <div className="project-card" key={index}>
 
-          <div className="ai-project-card">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="project-image"
+              />
 
-            {/* IMAGE */}
-            <div className="ai-project-image">
-              <img src={project.image} alt={project.title} />
-            </div>
+              <div className="project-content">
 
-            {/* CONTENT */}
-            <div className="ai-project-content">
-              <h2>{project.title}</h2>
+                <h2>{project.title}</h2>
 
-              <p className="project-desc">
-                {project.description}
-              </p>
+                <p className="project-desc">
+                  {project.description}
+                </p>
 
-              <h4>Technologies Used</h4>
-              <p className="project-tech">{project.tech}</p>
+                <h4>Technologies</h4>
 
-              <div className="ai-project-links">
-                <a href={project.live} target="_blank" rel="noreferrer">
-                  Live Demo
-                </a>
-                <a href={project.github} target="_blank" rel="noreferrer">
-                  GitHub
-                </a>
+                <p className="project-tech">
+                  {project.tech}
+                </p>
+
+                <div className="project-links">
+
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Live Demo
+                  </a>
+
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+
+                </div>
+
               </div>
+
             </div>
-
-          </div>
-
-          <button className="nav-btn right" onClick={next}>›</button>
+          ))}
 
         </div>
+
       </div>
     </section>
   );
