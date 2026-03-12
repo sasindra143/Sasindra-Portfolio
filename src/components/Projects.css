@@ -1,283 +1,152 @@
 /* =========================
-   AI PROJECTS SECTION
+   PROJECT SECTION
 ========================= */
 
-.ai-projects {
-  min-height: 100vh;
+.projects-section {
   background: radial-gradient(circle at top, #050505, #000);
   color: #fff;
-  padding: 220px 120px 160px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Grid background */
-.ai-projects::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 80px 80px;
-  pointer-events: none;
+  padding: 140px 120px;
 }
 
 /* =========================
    CONTAINER
 ========================= */
 
-.ai-projects-container {
+.projects-container {
   max-width: 1400px;
   margin: auto;
-  position: relative;
-  z-index: 2;
 }
 
 /* =========================
    HEADING
 ========================= */
 
-.ai-projects-heading {
-  font-size: 84px;
-  font-weight: 900;
-  margin-bottom: 24px;
+.projects-heading {
+  font-size: 70px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.ai-projects-subheading {
-  font-size: 22px;
-  color: #a1a1aa;
-  max-width: 760px;
-  margin: 0 auto 100px;
+.projects-subheading {
   text-align: center;
-  line-height: 1.7;
+  font-size: 20px;
+  color: #a1a1aa;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 90px;
 }
 
 /* =========================
-   CAROUSEL
+   GRID
 ========================= */
 
-.ai-carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
-/* Navigation buttons */
-.nav-btn {
-  background: none;
-  border: none;
-  font-size: 64px;
-  color: #38bdf8;
-  cursor: pointer;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.nav-btn:hover {
-  transform: scale(1.25);
-  color: #a855f7;
-}
-
 /* =========================
-   PROJECT CARD
+   CARD
 ========================= */
 
-.ai-project-card {
-  display: flex;
-  gap: 80px;
-  background: rgba(10,10,10,0.85);
-  border-radius: 28px;
-  padding: 60px;
-  max-width: 1100px;
-  box-shadow: 0 0 50px rgba(168,85,247,0.35);
+.project-card {
+  background: rgba(12,12,12,0.9);
+  border-radius: 22px;
+  overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.ai-project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 90px rgba(56,189,248,0.6);
+.project-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 0 40px rgba(168,85,247,0.4);
 }
 
 /* =========================
    IMAGE
 ========================= */
 
-.ai-project-image img {
-  width: 420px;
-  max-width: 100%;
-  border-radius: 20px;
+.project-image {
+  width: 100%;
+  height: 220px;
   object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.ai-project-card:hover img {
-  transform: scale(1.05);
 }
 
 /* =========================
    CONTENT
 ========================= */
 
-.ai-project-content h2 {
-  font-size: 36px;
-  margin-bottom: 16px;
+.project-content {
+  padding: 26px;
 }
 
-.ai-project-content h4 {
-  font-size: 18px;
-  margin-top: 18px;
-  color: #38bdf8;
+.project-content h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
 }
 
-.ai-project-content p,
-.ai-project-content li {
-  font-size: 18px;
+.project-desc {
+  font-size: 15px;
+  line-height: 1.6;
   color: #d4d4d8;
-  line-height: 1.7;
+  margin-bottom: 18px;
 }
 
-.ai-project-content ul {
-  padding-left: 20px;
+.project-content h4 {
+  color: #38bdf8;
+  margin-bottom: 6px;
 }
 
-.interview-text {
-  font-style: italic;
-  color: #e9d5ff;
-  margin-top: 6px;
+.project-tech {
+  font-size: 14px;
+  color: #a1a1aa;
+  margin-bottom: 20px;
 }
 
 /* =========================
-   LINKS
+   BUTTONS
 ========================= */
 
-.ai-project-links {
-  margin-top: 26px;
+.project-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
 }
 
-.ai-project-links a {
-  padding: 12px 26px;
+.project-links a {
+  padding: 10px 18px;
   border-radius: 999px;
   background: linear-gradient(135deg, #38bdf8, #a855f7);
   color: #000;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 14px;
+  transition: transform 0.3s ease;
 }
 
-.ai-project-links a:hover {
+.project-links a:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(56,189,248,0.4);
 }
 
 /* =========================
-   TWO COLUMN DETAILS
+   RESPONSIVE
 ========================= */
 
-.ai-project-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 26px;
+@media (max-width: 1000px) {
+
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
 }
 
-.ai-column h4 {
-  font-size: 18px;
-  color: #38bdf8;
-  margin-bottom: 12px;
-}
+@media (max-width: 650px) {
 
-.ai-column li,
-.ai-column p {
-  font-size: 17px;
-  color: #d4d4d8;
-  line-height: 1.7;
-}
-
-/* =========================
-   RESPONSIVE — LAPTOP
-========================= */
-
-@media (max-width: 1200px) {
-  .ai-projects {
-    padding: 180px 60px 140px;
-  }
-
-  .ai-projects-heading {
-    font-size: 60px;
-  }
-
-  .ai-project-card {
-    gap: 50px;
-    padding: 48px;
-  }
-}
-
-/* =========================
-   RESPONSIVE — TABLET
-========================= */
-
-@media (max-width: 900px) {
-  .ai-projects {
-    padding: 140px 32px 120px;
-  }
-
-  .ai-project-card {
-    flex-direction: column;
-    padding: 36px;
-    gap: 32px;
-  }
-
-  .ai-project-columns {
+  .projects-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
   }
 
-  .ai-projects-heading {
-    font-size: 48px;
+  .projects-heading {
+    font-size: 42px;
   }
 
-  .nav-btn {
-    font-size: 48px;
-  }
-}
-
-/* =========================
-   RESPONSIVE — MOBILE
-========================= */
-
-@media (max-width: 600px) {
-  .ai-projects {
-    padding: 120px 18px 90px;
-  }
-
-  .ai-projects-heading {
-    font-size: 34px;
-  }
-
-  .ai-projects-subheading {
-    font-size: 15px;
-    margin-bottom: 60px;
-  }
-
-  .ai-project-card {
-    padding: 26px;
-  }
-
-  .ai-project-content h2 {
-    font-size: 24px;
-  }
-
-  .ai-project-content p,
-  .ai-project-content li {
-    font-size: 15px;
-  }
-
-  .nav-btn {
-    font-size: 36px;
-  }
 }
