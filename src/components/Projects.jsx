@@ -38,9 +38,20 @@ const projects = [
       "https://res.cloudinary.com/dvknx0hpm/image/upload/v1770431009/Screenshot_2026-02-07_075312_xixwcf.png",
     description:
       "Created a comprehensive platform to help students discover and compare colleges, featuring detailed college profiles, admission information, and career guidance resources.",
-    tech: "React, JavaScript, HTML5, CSS3, REST API, Netlify",
+    tech: "React, JavaScript, HTML5, CSS3, REST API, PostreSQL",
     live: "https://carrer-campus-college-platform.netlify.app/",
-    github: "https://github.com/sasindra143/career-campus",
+    github: "https://github.com/sasindra143/College-Finder",
+  },
+
+   {
+    title: "College Discovery Platform – Career Campus",
+    image:
+      "https://res.cloudinary.com/dvknx0hpm/image/upload/v1770431009/Screenshot_2026-02-07_075312_xixwcf.png",
+    description:
+      "Created a comprehensive platform to help students discover and compare colleges, featuring detailed college profiles, admission information, and career guidance resources.",
+    tech: "React, JavaScript, HTML5, CSS3, REST API, PostreSQL",
+    live: "https://carrer-campus-college-platform.netlify.app/",
+    github: "https://github.com/sasindra143/College-Finder",
   },
 ];
 
