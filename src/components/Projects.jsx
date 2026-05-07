@@ -12,7 +12,6 @@ const projects = [
     live: "https://www.prskillverse.com",
     github: "https://github.com/sasindra143/pr-skillverse-frontend",
   },
-
   {
     title: "Vaakya Creations – Women's Clothing E-Commerce",
     image:
@@ -23,7 +22,6 @@ const projects = [
     live: "https://vaakya-creations.netlify.app/",
     github: "https://github.com/sasindra143/Vaakya-Creations",
   },
-
   {
     title: "360 VertexSolutions – Business Services Website",
     image:
@@ -33,6 +31,16 @@ const projects = [
     tech: "React, JavaScript, HTML5, CSS3, Netlify",
     live: "https://360vertexsolutions.com/",
     github: "https://github.com/sasindra143/360-vertex-solutions",
+  },
+  {
+    title: "College Discovery Platform – Career Campus",
+    image:
+      "https://res.cloudinary.com/dvknx0hpm/image/upload/v1770431009/Screenshot_2026-02-07_075312_xixwcf.png",
+    description:
+      "Created a comprehensive platform to help students discover and compare colleges, featuring detailed college profiles, admission information, and career guidance resources.",
+    tech: "React, JavaScript, HTML5, CSS3, REST API, Netlify",
+    live: "https://carrer-campus-college-platform.netlify.app/",
+    github: "https://github.com/sasindra143/career-campus",
   },
 ];
 
