@@ -32,27 +32,27 @@ const projects = [
     live: "https://360vertexsolutions.com/",
     github: "https://github.com/sasindra143/360-vertex-solutions",
   },
+  
   {
-    title: "College Discovery Platform – Career Campus",
-    image:
-      "https://res.cloudinary.com/dvknx0hpm/image/upload/v1770431009/Screenshot_2026-02-07_075312_xixwcf.png",
-    description:
-      "Created a comprehensive platform to help students discover and compare colleges, featuring detailed college profiles, admission information, and career guidance resources.",
-    tech: "React, JavaScript, HTML5, CSS3, REST API, PostreSQL",
-    live: "https://carrer-campus-college-platform.netlify.app/",
-    github: "https://github.com/sasindra143/College-Finder",
-  },
-
-   {
-    title: "College Discovery Platform – Career Campus",
-    image:
-      "https://res.cloudinary.com/dvknx0hpm/image/upload/v1770431009/Screenshot_2026-02-07_075312_xixwcf.png",
-    description:
-      "Created a comprehensive platform to help students discover and compare colleges, featuring detailed college profiles, admission information, and career guidance resources.",
-    tech: "React, JavaScript, HTML5, CSS3, REST API, PostreSQL",
-    live: "https://carrer-campus-college-platform.netlify.app/",
-    github: "https://github.com/sasindra143/College-Finder",
-  },
+  title: "Ration Shop Management System",
+  image:
+    "https://res.cloudinary.com/dvknx0hpm/image/upload/v1784313102/Screenshot_2026-07-18_000001_nep3ee.png",
+  description:
+    "Developed a responsive ration shop management system that streamlines ration card management, product distribution, beneficiary records, and inventory tracking through an intuitive and user-friendly interface.",
+  tech: "React, Node.js, JavaScript, HTML5, CSS3, MySQL",
+  live: "https://ration-shop-management-sys-sunkesula.netlify.app/",
+  github: "https://github.com/sasindra143/ration-shop-management-system",
+},
+{
+  title: "College Finder Application",
+  image:
+    "https://res.cloudinary.com/dvknx0hpm/image/upload/v1784313277/Screenshot_2026-07-18_000412_bdjnb4.png",
+  description:
+    "Built a responsive college finder application that helps students explore colleges with an easy-to-use interface, search functionality, and organized college information for better decision-making.",
+  tech: "React, JavaScript, HTML5, CSS3",
+  live: "https://colleges-finder-apllication.netlify.app/",
+  github: "https://github.com/sasindra143/College-Finder",
+},
 ];
 
 export default function Projects() {
